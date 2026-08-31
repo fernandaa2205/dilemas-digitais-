@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Segura - Guia Prático</title>
+    <style>
+        /* Foco em Acessibilidade: Letras grandes, alto contraste e botões fáceis de clicar */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            font-size: 22px; /* Fonte maior para facilitar a leitura */
+        }
+        max-width: 800px;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 32px;
+        }
+        h2 {
+            color: #e74c3c;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #ecf0f1;
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+            border-radius: 4px;
+        }
+        .quiz-box {
+            background: #e8f8f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border: 2px solid #1abc9c;
+        }
+        button {
+            display: block;
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #feedback {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .correto { background-color: #d4edda; color: #155724; }
+        .incorreto { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🛡️ Guia da Internet Segura</h1>
+        <p>Aprenda a se proteger de golpes no WhatsApp, banco e internet de forma simples e rápida.</p>
+
+        <h2>3 Regras de Ouro</h2>
+        <ul>
+            <li><strong>1. Desconfie da Urgência:</strong> Golpistas sempre dizem que "é urgente", "sua conta vai ser bloqueada" ou "alguém sofreu um acidente". Respire fundo e não faça nada com pressa.</li>
+            <li><strong>2. O Golpe do Novo Número:</strong> Se um parente mandar mensagem de um número desconhecido pedindo dinheiro (Pix), <strong>LIGUE</strong> para o número antigo dele para confirmar.</li>
+            <li><strong>3. Cuidado com Links:</strong> O banco nunca manda links por SMS pedindo sua senha. Na dúvida, vá até o aplicativo oficial do banco.</li>
+        </ul>
+
+        <div class="quiz-box">
+            <h2>Teste seus conhecimentos</h2>
+            <p><strong>Situação:</strong> Você recebe uma mensagem no WhatsApp: <em>"Oi mãe/vó, troquei de número. Meu aplicativo do banco bloqueou, pode fazer um Pix urgente de R$ 300 para essa chave?"</em> O que você faz?</p>
+            
+            <button onclick="responder(false)">Faço o Pix na hora para ajudar.</button>
+            <button onclick="responder(true)">Não faço o Pix. Ligo para o número antigo para confirmar se é verdade.</button>
+            <button onclick="responder(false)">Respondo a mensagem perguntando quem é.</button>
+
+            <div id="feedback" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script>
+        function responder(isCorreto) {
+            const feedback = document.getElementById('feedback');
+            feedback.style.display = 'block';
+            
+            if(isCorreto) {
+                feedback.className = 'correto';
+                feedback.innerHTML = '✅ Muito bem! Você evitou um golpe. Sempre confirme por ligação de voz no número antigo!';
+            } else {
+                feedback.className = 'incorreto';
+                feedback.innerHTML = '❌ Cuidado! Isso é um golpe comum. Nunca envie dinheiro sem ouvir a voz da pessoa ligando para o número antigo dela.';
+            }
+        }
+    </script>
+</body>
+</html>
